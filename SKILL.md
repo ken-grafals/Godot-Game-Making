@@ -132,6 +132,23 @@ art/characters/          # Production-ready, referenced by SpriteFrames .tres
 3. **Process** — remove background, resize, flip, ensure consistency across frames
 4. **Deploy** — copy final PNGs to `art/characters/<name>/`, replacing placeholders
 
+### Before Generating: Write a Character Design Doc
+
+Before generating any sprites for a new character, write a `.md` file in the project's `docs/` directory describing the character. Include:
+
+- Physical description (hair, skin, build, expression)
+- Outfit details (colors, accessories)
+- Art style and proportions (e.g., chibi, SNES pixel art)
+- Sprite dimensions and facing direction
+- List of animations needed
+- Key visual details that MUST be preserved across all frames
+
+This doc serves as the prompt reference for all future frame generation and ensures consistency.
+
+### `create-image` Still Needs Background Removal
+
+Even though `create-image` supports `background: transparent`, the AI often produces a faint colored background glow or halo instead of true transparency. **Always run rembg on the output regardless of whether you requested transparent background.** Don't assume the background is clean — verify by checking pixel alpha values.
+
 ### Generating Animation Frames (Sprite Sheets)
 
 When generating multiple frames for an animation (e.g., a 4-frame walk cycle), follow these rules:
@@ -329,8 +346,18 @@ Clear icon readable at 32x32 pixels.
 
 **Struggles with:**
 - Consistent multi-frame animation (mitigate: always use reference image + detailed prompts preserving specific visual details)
-- Transparent backgrounds on edit endpoint (mitigate: use chroma-key background + post-processing)
+- Transparent backgrounds on ANY endpoint — even `create-image` with `background: transparent` often produces faint halos (mitigate: always run rembg regardless)
 - Matching character proportions exactly across frames (mitigate: regenerate bad frames using a good frame as reference)
+- Even skin/face coloring — produces washed-out near-white pixels on faces (mitigate: post-process to blend outlier skin pixels toward median skin color)
+
+### When Changing Sprite Dimensions
+
+If the new sprite dimensions differ from existing placeholders (e.g., 32x64 → 40x40), you must also update:
+
+1. **CollisionShape2D** in the character's `.tscn` scene (body collision)
+2. **Attack hitbox** CollisionShape2D and any debug ColorRect
+3. **Attack hitbox offset** in the script (e.g., `hitbox.position.x = facing_direction * N`)
+4. **All other placeholder sprites** for the same character — resize them to match so animations don't glitch between frames
 
 Plan for 1-2 regeneration attempts per frame and manual review of every frame before deploying.
 
