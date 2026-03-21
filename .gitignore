@@ -1,0 +1,23 @@
+# Environment
+.env
+GODOT_OPENAI_API_KEY
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Generated art (keep in consuming projects, not here)
+*.png
+*.jpg
+*.jpeg
+!references/*.png
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
