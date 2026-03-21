@@ -98,6 +98,16 @@ python ~/Workspace/Godot-Game-Making/scripts/generate_art.py \
 
 Requires `GODOT_OPENAI_API_KEY` environment variable and `pip install openai`.
 
+#### Recommended generation settings
+
+| Parameter | Value | Notes |
+|-----------|-------|-------|
+| **model** | `gpt-image-1` | Best model for game art generation |
+| **size** | `1024x1024` | Standard square output; downscaled in post-processing |
+| **quality** | `medium` | Best cost/quality balance. `high` is not worth the extra cost for sprites that get downscaled to 28x48 |
+
+Always use these defaults unless there's a specific reason to deviate.
+
 ### 2. MCP Server (Conversational Exploration)
 
 If the `openai-gpt-image` MCP server is configured, two tools are available:
