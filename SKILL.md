@@ -58,9 +58,11 @@ Tests extend `GdUnitTestSuite`. Use `auto_free()` for cleanup, `simulate()` for 
 
 ## AI Art Generation
 
-For AI art generation (OpenAI image APIs, background removal, post-processing, sprite pipeline), use the `/godot-openai-image-gen` skill.
+When the user needs to generate or process game art using OpenAI image APIs, **read and follow the sub-skill document:**
 
-Link it: `ln -s ~/Workspace/Godot-OpenAI-Image-Gen-Skill ~/.claude/skills/godot-openai-image-gen`
+`~/Workspace/Godot-Game-Making/sub-skills/godot-openai-image-gen/GODOT_OPENAI_IMAGE_GEN_SKILL.md`
+
+It covers: prompt templates, background removal (`rembg`), post-processing pipeline, animation frame generation, sprite direction/dimension validation, and the full raw → production art workflow.
 
 ## Reference
 
