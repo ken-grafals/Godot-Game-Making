@@ -62,7 +62,7 @@ Tests extend `GdUnitTestSuite`. Use `auto_free()` for cleanup, `simulate()` for 
 
 When the user needs to generate or process game art, **read and follow the sub-skill document:**
 
-`~/Workspace/Godot-Game-Making/sub-skills/godot-openai-image-gen/GODOT_OPENAI_IMAGE_GEN_SKILL.md`
+`~/Workspace/Godot/Godot-Game-Making/sub-skills/godot-openai-image-gen/GODOT_OPENAI_IMAGE_GEN_SKILL.md`
 
 It covers: prompt templates, background removal (`rembg`), post-processing pipeline, animation frame generation, sprite direction/dimension validation, and the full raw → production art workflow.
 
@@ -70,12 +70,12 @@ It covers: prompt templates, background removal (`rembg`), post-processing pipel
 
 For multi-frame animations needing character consistency across frames (walk cycles, run cycles), there is an experimental fal.ai pipeline:
 
-`~/Workspace/Godot-Game-Making/sub-skills/fal-sprites/FAL_SPRITES_SKILL.md`
+`~/Workspace/Godot/Godot-Game-Making/sub-skills/fal-sprites/FAL_SPRITES_SKILL.md`
 
 **Status:** Work in progress. ControlNet Union pose mode on FLUX has reliability issues with OpenPose skeletons — pose following is inconsistent. Use OpenAI image generation for production art until this is resolved.
 
 ## Reference
 
-- **General workflow:** `~/Workspace/Godot-Game-Making/references/godot-claude-code-guide.md`
-- **Scaffolding a new game:** `~/Workspace/Godot-Game-Making/references/godot-scaffolding-guide.md`
-- **2D platformer patterns:** `~/Workspace/Godot-Game-Making/references/godot-2d-platformer-guide.md`
+- **General workflow:** `~/Workspace/Godot/Godot-Game-Making/references/godot-claude-code-guide.md`
+- **Scaffolding a new game:** `~/Workspace/Godot/Godot-Game-Making/references/godot-scaffolding-guide.md`
+- **2D platformer patterns:** `~/Workspace/Godot/Godot-Game-Making/references/godot-2d-platformer-guide.md`

@@ -14,7 +14,7 @@ A Claude Code skill for Godot game development workflows and AI art generation.
 
 ```bash
 mkdir -p ~/.claude/skills
-ln -s ~/Workspace/Godot-Game-Making ~/.claude/skills/godot-game-making
+ln -s ~/Workspace/Godot/Godot-Game-Making ~/.claude/skills/godot-game-making
 ```
 
 ### 2. (For AI art generation) Install Python dependencies

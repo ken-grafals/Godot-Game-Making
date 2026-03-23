@@ -33,16 +33,16 @@ Each animation frame is generated separately with the same character reference +
 
 ## Generate Frames CLI
 
-Use `~/Workspace/Godot-Game-Making/sub-skills/fal-sprites/scripts/generate_frames.py` to generate animation frames:
+Use `~/Workspace/Godot/Godot-Game-Making/sub-skills/fal-sprites/scripts/generate_frames.py` to generate animation frames:
 
 ```bash
 # Activate the skill's venv
-source ~/Workspace/Godot-Game-Making/sub-skills/fal-sprites/.venv/bin/activate
+source ~/Workspace/Godot/Godot-Game-Making/sub-skills/fal-sprites/.venv/bin/activate
 
 # Generate a 4-frame walk cycle
-python ~/Workspace/Godot-Game-Making/sub-skills/fal-sprites/scripts/generate_frames.py \
+python ~/Workspace/Godot/Godot-Game-Making/sub-skills/fal-sprites/scripts/generate_frames.py \
   --reference art/characters/player/idle.png \
-  --poses ~/Workspace/Godot-Game-Making/sub-skills/fal-sprites/poses/walk_4frame/ \
+  --poses ~/Workspace/Godot/Godot-Game-Making/sub-skills/fal-sprites/poses/walk_4frame/ \
   --prompt "SNES pixel art boy character, white karate gi, black belt, curly brown hair, brown sandals, side view, 16-bit game sprite, clean silhouette" \
   --output-dir art/generated_raw/player/walk/ \
   --width 512 --height 512
@@ -85,7 +85,7 @@ Start with IP-Adapter 0.6 + ControlNet 0.7 and adjust from there.
 After generating and curating frames, run post-processing to make production-ready sprites:
 
 ```bash
-python ~/Workspace/Godot-Game-Making/sub-skills/fal-sprites/scripts/postprocess.py \
+python ~/Workspace/Godot/Godot-Game-Making/sub-skills/fal-sprites/scripts/postprocess.py \
   --input-dir art/generated_raw/player/walk/ \
   --output-dir art/characters/player/ \
   --target-width 40 --target-height 40 \
@@ -116,7 +116,7 @@ Pipeline steps:
 
 ### Included Poses
 
-Pre-made pose guides in `~/Workspace/Godot-Game-Making/sub-skills/fal-sprites/poses/`:
+Pre-made pose guides in `~/Workspace/Godot/Godot-Game-Making/sub-skills/fal-sprites/poses/`:
 - `walk_4frame/` — 4-frame walk cycle (contact, recoil, passing, high-point)
 
 ### Creating Custom Poses
@@ -124,7 +124,7 @@ Pre-made pose guides in `~/Workspace/Godot-Game-Making/sub-skills/fal-sprites/po
 Use the pose generator script:
 
 ```bash
-python ~/Workspace/Godot-Game-Making/sub-skills/fal-sprites/scripts/create_poses.py
+python ~/Workspace/Godot/Godot-Game-Making/sub-skills/fal-sprites/scripts/create_poses.py
 ```
 
 Or create your own 512x512 PNGs with:

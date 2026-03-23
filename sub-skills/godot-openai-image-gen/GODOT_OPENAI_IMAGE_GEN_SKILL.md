@@ -8,11 +8,11 @@ Two tools are available for generating game art:
 
 ### 1. Python Script (Repeatable Production Jobs)
 
-Use `~/Workspace/Godot-Game-Making/sub-skills/godot-openai-image-gen/scripts/generate_art.py` for batch/repeatable generation:
+Use `~/Workspace/Godot/Godot-Game-Making/sub-skills/godot-openai-image-gen/scripts/generate_art.py` for batch/repeatable generation:
 
 ```bash
 # Basic generation
-python ~/Workspace/Godot-Game-Making/sub-skills/godot-openai-image-gen/scripts/generate_art.py \
+python ~/Workspace/Godot/Godot-Game-Making/sub-skills/godot-openai-image-gen/scripts/generate_art.py \
   --prompt "A goblin enemy for a 2D platformer, side view, transparent background" \
   --output art/generated_raw/enemies/goblin_001.png \
   --size 1024x1024 \
@@ -20,13 +20,13 @@ python ~/Workspace/Godot-Game-Making/sub-skills/godot-openai-image-gen/scripts/g
   --background transparent
 
 # With reference image (edit endpoint)
-python ~/Workspace/Godot-Game-Making/sub-skills/godot-openai-image-gen/scripts/generate_art.py \
+python ~/Workspace/Godot/Godot-Game-Making/sub-skills/godot-openai-image-gen/scripts/generate_art.py \
   --prompt "Create a hurt version of this character, same style" \
   --reference art/characters/enemy/idle.png \
   --output art/generated_raw/enemies/goblin_hurt_001.png
 
 # Multiple variations
-python ~/Workspace/Godot-Game-Making/sub-skills/godot-openai-image-gen/scripts/generate_art.py \
+python ~/Workspace/Godot/Godot-Game-Making/sub-skills/godot-openai-image-gen/scripts/generate_art.py \
   --prompt "A treasure chest item" \
   --output art/generated_raw/items/chest.png \
   --count 3
