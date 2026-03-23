@@ -76,4 +76,6 @@ For multi-frame animations needing character consistency across frames (walk cyc
 
 ## Reference
 
-For detailed patterns and conventions, see: `~/Workspace/Godot-Game-Making/references/godot-claude-code-guide.md`
+- **General workflow:** `~/Workspace/Godot-Game-Making/references/godot-claude-code-guide.md`
+- **Scaffolding a new game:** `~/Workspace/Godot-Game-Making/references/godot-scaffolding-guide.md`
+- **2D platformer patterns:** `~/Workspace/Godot-Game-Making/references/godot-2d-platformer-guide.md`
