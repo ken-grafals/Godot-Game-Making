@@ -1,6 +1,6 @@
 ---
 name: godot-game-making
-description: Triggers when user is making a Godot game or asks about Godot game development with Claude Code — covers project structure, sprite systems, testing, and key patterns
+description: Triggers when user is making a Godot game, needs game art, wants to generate images for a Godot project, or asks about Godot game development with Claude Code
 user-invocable: true
 ---
 
@@ -58,11 +58,21 @@ Tests extend `GdUnitTestSuite`. Use `auto_free()` for cleanup, `simulate()` for 
 
 ## AI Art Generation
 
-When the user needs to generate or process game art using OpenAI image APIs, **read and follow the sub-skill document:**
+### OpenAI Image Generation (preferred)
+
+When the user needs to generate or process game art, **read and follow the sub-skill document:**
 
 `~/Workspace/Godot-Game-Making/sub-skills/godot-openai-image-gen/GODOT_OPENAI_IMAGE_GEN_SKILL.md`
 
 It covers: prompt templates, background removal (`rembg`), post-processing pipeline, animation frame generation, sprite direction/dimension validation, and the full raw → production art workflow.
+
+### fal.ai Sprite Animations (work in progress)
+
+For multi-frame animations needing character consistency across frames (walk cycles, run cycles), there is an experimental fal.ai pipeline:
+
+`~/Workspace/Godot-Game-Making/sub-skills/fal-sprites/FAL_SPRITES_SKILL.md`
+
+**Status:** Work in progress. ControlNet Union pose mode on FLUX has reliability issues with OpenPose skeletons — pose following is inconsistent. Use OpenAI image generation for production art until this is resolved.
 
 ## Reference
 
